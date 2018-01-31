@@ -1,0 +1,17 @@
+{
+  "hints": [],
+  "groups": [
+    {
+      "sourceType": "com.boilerplate.sdk.autoconfigure.SdkProperties",
+      "name": "boilerplate.sdk",
+      "type": "com.boilerplate.sdk.autoconfigure.SdkProperties"
+    }
+  ],
+  "properties": [
+    {
+      "sourceType": "com.boilerplate.sdk.autoconfigure.SdkProperties",
+      "name": "boilerplate.sdk.user-name",
+      "type": "java.lang.String"
+    }
+  ]
+}
