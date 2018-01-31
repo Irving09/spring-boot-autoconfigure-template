@@ -14,6 +14,7 @@ import com.boilerplate.sdk.ServiceConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -30,9 +31,15 @@ public class BoilerplateAutoConfiguration {
     private SdkProperties properties;
 
     @Bean
-    @ConditionalOnBean
+    @ConditionalOnMissingBean
     public ServiceConfig serviceConfig() {
         return new ServiceConfig(properties.getUserName());
+    }
+
+    @Bean
+    @ConditionalOnMissingBean
+    public Service service() {
+        return new Service(serviceConfig());
     }
 
 }
